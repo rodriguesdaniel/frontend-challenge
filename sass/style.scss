@@ -1,0 +1,186 @@
+/* Default colors */
+$brand-color-primary: #010101;
+$brand-color-secondary: #523056;
+$brand-color-tertiary: #FFFFFF;
+
+/* Base */
+
+body{
+    background: $brand-color-secondary;
+    color: $brand-color-tertiary;
+    font-family: 'Merriweather', serif;
+}
+
+h1{
+    color: $brand-color-tertiary;
+}
+
+h2{
+    color: $brand-color-primary;
+    font-size: 1.4em;
+}
+
+/* Video header fullwidth */
+
+header {
+    position: relative;
+    background-color: black;
+    height: 75vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+    video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: 0;
+        -ms-transform: translateX(-50%) translateY(-50%);
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+    }
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: black;
+        opacity: 0.5;
+        z-index: 1;
+    }
+  }
+
+
+  #list-plates {
+    /* Remove default list styling */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    float: left;
+    li{
+        display: inline-block;
+    }
+  }
+
+
+  /* Plate */
+
+  .plate{
+    background: $brand-color-tertiary;
+    -webkit-box-shadow: 5px 5px 16px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 5px 16px 0px rgba(0,0,0,0.75);
+    box-shadow: 5px 5px 16px 0px rgba(0,0,0,0.75);
+    @media screen and (min-width: 768px){
+        margin-bottom: 65px;
+    }
+    @media screen and (max-width: 768px){
+        margin-bottom: 33px;
+    }
+    padding-bottom: 15px;
+    figure {
+        max-height: 350px;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;					
+        img{
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            -webkit-transition: .3s ease-in-out;
+            transition: .3s ease-in-out;
+            &:hover{
+                -webkit-transform: scale(1.3);
+                transform: scale(1.3);
+            }
+        }
+    }
+    h2{
+        padding: 15px;
+    }
+    ul{
+        list-style: none;
+        padding: 0;
+        li{
+            display: inline-block;
+            width: 49%;
+            padding: 0 14px;
+            color: $brand-color-primary;
+            a{
+                color: $brand-color-primary;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+  }
+
+  .head-area{
+      width: 100%;
+      padding-top: 25px;
+      padding-bottom: 25px;
+  }
+
+  form{
+      .form-control{
+          border: 0;
+          border-radius: 0;
+      }
+  }
+
+  footer{
+      padding: 60px 0;
+  }
+
+  /* media querie header video display static image */
+  @media (pointer: coarse) and (hover: none) {
+    header {
+      background: url('../images/cover-steak.jpg') black no-repeat center center scroll;
+    }
+    header video {
+      display: none;
+    }
+  }
+
+  /* responsive break-points */
+
+  @media screen and (max-width: 768px){
+      body{
+          overflow-x: hidden;
+      }
+      h1{
+          font-size: 2rem;
+      }
+      .plate{
+          ul{
+              li{
+                a{
+                    font-size: 0.9em;
+                }
+              }
+          }
+      }
+      footer p{
+          font-size: 0.8rem;
+      }
+  }
+
+  @media screen and (max-width: 320px){
+    h1{
+        font-size: 1.3rem;
+    }
+
+    .display-3{
+        font-size: 3rem;
+    }
+  }
+
